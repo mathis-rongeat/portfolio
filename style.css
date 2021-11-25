@@ -1,0 +1,1035 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+body, html{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: rgb(41,185,209);
+  background: linear-gradient(90deg, rgba(41,185,209,1) 0%, rgba(41,156,236,1) 49%, rgba(0,212,255,1) 100%);
+  font-family: "Montserrat", sans-serif;
+}
+
+body{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 25px;
+  padding: 0em 3em 1em;
+  color: #fff;
+  text-align: justify;
+}
+
+h1{
+  padding: 0em 2em;
+  color: #fff;
+  font-size: 5em;
+  font-family: "Couture", sans-serif;
+  text-shadow: 10px 10px 10px black;
+}
+
+header{
+  display: block;
+}
+
+section{
+  display: block;
+}
+
+/*Menu nav*/
+
+#menu {
+  position: fixed;
+  margin: 0; padding: 0;
+  width: 110px;
+  height: 110px;
+  background-color: #272727;
+  border-bottom-right-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  animation: not-checked-anim .2s both;
+  transition: .2s;
+  z-index: 5000;
+}
+
+li {
+  width: 100%;
+  text-align: center;
+}
+
+li, a {
+  margin: 14vh  0 0 0;
+  color: #03A9F4;
+  font-size: 4vh;
+  font-weight: 700;
+  line-height: 1.8;
+  text-decoration: none;
+  text-transform: none;
+  list-style: none;
+  outline: 0;
+  display: none;
+}
+
+#menu a:focus {
+  display: block;
+  color: #333;
+  background-color: #eee;
+  transition: all .5s;
+}
+
+#trigger, #burger, #burger:before, #burger:after {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  background: #03A9F4;
+  width: 30px;
+  height: 5px;
+  transition: .2s ease;
+  cursor: pointer;
+  z-index: 6000;
+}
+#trigger {
+  height: 25px;
+  background: none;
+}
+#burger:before {
+  content: " ";
+  top: 35px;
+  left: 25px;
+}
+#burger:after {
+  content: " ";
+  top: 45px;
+  left: 25px;
+}
+#menu-toggle:checked + #trigger + #burger {
+  top: 35px;
+  transform: rotate(180deg);
+  transition: transform .2s ease;
+}
+
+#menu-toggle:checked + #trigger + #burger:before {
+  width: 20px;
+  top: -2px;
+  left: 18px;
+  transform: rotate(45deg) translateX(-5px);
+  transition: transform .2s ease;
+}
+#menu-toggle:checked + #trigger + #burger:after {
+  width: 20px;
+  top: 2px;
+  left: 18px;
+  transform: rotate(-45deg) translateX(-5px);
+  transition: transform .2s ease;
+}
+
+#menu-toggle:checked + #trigger + #burger + #menu {
+  animation: checked-anim 1s ease both;
+}
+#menu-toggle:checked + #trigger ~ #menu > li, a {
+  display: block;
+}
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  display: none;
+}
+
+@keyframes checked-anim {
+  50% {
+      width: 100vw;
+      height: 100vh;
+  }
+  100% {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+  }
+}
+@keyframes not-checked-anim {
+  0% {
+      width: 2000px;
+      height: 2000px;
+  }
+}
+
+
+/*Home*/
+#home{
+display: flex;
+justify-content: center;
+align-items:center;
+}
+
+#presentation{
+  margin-top: 25vh;
+  width: 40vw;
+  height:50vh;
+  background-color: #333333;  
+  z-index: 2000;
+  box-shadow: 20px 20px 10px 1px rgba(0, 0, 0, 0.5);
+  border: solid white 3px;
+}
+
+#presentation p{
+ font-size:30px;
+}
+
+#presentation h1{
+ padding: 0em 1em;
+ text-align: center;
+}
+
+
+/*Page à propos et compétences*/
+
+.infos{
+  margin-top: 30vh;
+  z-index: 1000;
+  width:100%;
+  height: 110vh;
+  background-color:#333333 ;
+}
+
+.left-container,.right-container{
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.left-container{
+  float: left;
+}
+
+.right-container{
+  float: right;
+}
+
+.icons{
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icons h3{
+  padding: 0em 1em;
+  color: #fff;
+  font-size: 2em;
+  font-family: "Couture", sans-serif;
+  text-shadow: 5px 5px 10px black;
+}
+
+.icons img{
+  padding: 1em 1em;
+  color: #fff;
+  width:50px;
+  height:50px;
+}
+
+#cv{
+  font-size: 2em;
+  text-align: left;
+  margin: 0  0 0 0;
+  padding: 3em;
+  color: #fff;
+  font-weight: 0;
+  line-height: 0;
+}
+
+#cv:hover{
+  color: #03A9F4;
+  transition: 0.5s ease;
+}
+
+  /* Travaux */
+
+#travaux{
+  margin-top: 10vh;
+  z-index: 1500;
+  width:100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+h5{
+  color: #fff;
+  font-size: 3em;
+  opacity: 0;
+}
+
+.left-work{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.left-work img:hover{
+  filter: brightness(60%);
+  transition: 0.5s ease;
+}
+
+.left-work:hover h5{
+  opacity:1;
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+
+.left-work h5{
+  z-index: 11;
+  text-align: center;
+}
+
+.left-work img{
+  position: absolute;
+  width: 25vw;
+  height: 35vh;
+  z-index: 9;
+}
+
+.left-work,.right-work{
+  width: 25vw;
+  height: 35vh;
+  background-color:#333333;
+}
+
+.ligne{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding:6em;
+}
+
+#travaux h1{
+  text-align: center;
+  background-color: #333333;
+  background-size: 25%;
+}
+
+#travaux div h1{
+  padding: 0 0.5em;
+  color: #fff;
+  font-size: 2em;
+  font-family: "Couture", sans-serif;
+  text-shadow: 5px 5px 10px black;
+  text-align: center;
+}
+
+#travaux div p{
+  font-size: 1em;
+  padding: 0.5em 1em;
+}
+
+#travaux .ligne div{
+  box-shadow: 20px 20px 10px 1px rgba(0, 0, 0, 0.5);
+  border: solid white 3px;
+}
+
+#travaux div a{
+  font-size: 1.5em;
+  color: #fff;
+  margin: 0 0 0 0;
+  padding-left: 1em;
+}
+
+
+#travaux div a:hover{
+  color: #03A9F4;
+  transition: 0.5s ease;
+}
+ /* Footer */
+
+#footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  background-color: #333333;
+  width: 100%;
+  box-shadow: 0px -10px 20px black;
+  
+}
+
+.contact{
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  
+}
+
+.contact img{
+  height: 10vh;
+}
+
+.pro{
+  width:33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pro h4{
+  color: #fff;
+  font-size: 1.5em;
+  margin:0;
+  margin-top: 1em;
+  text-align: center;
+}
+
+#travaux #footer .contact a{
+  padding-left: 0;
+  margin:0;
+}
+
+
+#footer h2{
+  padding: 0em 2em;
+  color: #fff;
+  font-size: 3em;
+  font-family: "Couture", sans-serif;
+  text-shadow: 10px 10px 10px black;
+}
+
+ /* Pages de projets */
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header{
+  width: 100vw;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+#retour{
+  width: 100vw;
+  height: 10vh;
+  align-self: flex-start;
+}
+
+#back{
+  font-size: 2em;
+  color: #fff;
+  margin: 0 0 0 0;
+  padding: 1em 2em;
+}
+
+#back:hover{
+  color: #03A9F4;
+  transition: 0.5s ease;
+}
+
+#titre{
+  background-color: #333333;
+  margin-top: 10vh;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+  border: solid white 3px;
+}
+
+#titre h1{
+  text-align: center;
+}
+
+#resume{
+  background-color: #333333;
+  margin-top: 10vh;
+  width: 80vw;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+  border: solid white 3px;
+}
+
+#partie1{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#partie1 img{
+  width: 80vw;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+}
+
+#partie2 img{
+  width: 40%;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+  border: solid white 3px;
+}
+
+#color{
+  background-color: #333333;
+  width: 40%;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+  border: solid white 3px;
+}
+
+#partie2{
+  width: 80vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#partie3{
+  
+}
+
+#partie4{
+  
+}
+
+#partie5{
+  
+}
+
+@media screen and (max-width:1550px){
+
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
+  padding: 0em 2em 1em;
+  color: #fff;
+  text-align: justify;
+}
+
+#presentation h1{
+  padding: 0em 1em;
+  font-size: 4em;
+}
+
+/*Menu nav*/
+
+
+/*Home*/
+
+
+/*Page à propos et compétences*/
+
+.infos{
+  margin-top: 30vh;
+}
+
+.infos h1{
+  font-size: 4em;
+}
+
+.icons h3{
+  padding: 0em 0em;
+  font-size: 1.5em;
+}
+
+.icons img{
+  padding: 1em 1em;
+  color: #fff;
+  width:40px;
+  height:40px;
+}
+
+#cv{
+  font-size: 2em;
+  padding: 2em;
+}
+
+#cv:hover{
+  color: #03A9F4;
+  transition: 0.5s ease;
+}
+
+  /* Travaux */
+
+#travaux{
+  margin-top: 10vh;
+  z-index: 1500;
+  width:100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+h5{
+  color: #fff;
+  font-size: 3em;
+  opacity: 0;
+}
+
+#travaux h1{
+  font-size: 4em;
+}
+
+#travaux div h1{
+  font-size: 1.5em;
+}
+
+#travaux div p{
+  font-size: 0.90em;
+  padding: 0em 1em;
+}
+
+}
+
+@media screen and (max-width:1180px) {
+
+p {
+  font-size: 18px;
+  padding: 0em 3em 1em;
+}
+
+h1{
+  padding: 0em 1em;
+  font-size: 2em;
+}
+
+/*Menu nav*/
+
+
+/*Home*/
+#presentation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#presentation p{
+ font-size:25px;
+}
+
+#presentation h1{
+  font-size: 3em;
+ padding: 0em 1em;
+}
+
+
+/*Page à propos et compétences*/
+
+.infos h1{
+  font-size: 3em;
+}
+
+.icons h3{
+  padding: 0em 1em;
+  color: #fff;
+  font-size: 1.8em;
+  font-family: "Couture", sans-serif;
+  text-shadow: 5px 5px 10px black;
+}
+
+.icons img{
+  padding: 1em 1em;
+  color: #fff;
+  width:30px;
+  height:30px;
+}
+
+#cv{
+  font-size: 1.5em;
+  padding: 1.5em;
+}
+
+  /* Travaux */
+
+#travaux{
+  margin-top: 10vh;
+  z-index: 1500;
+  width:100%;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+h5{
+  color: #fff;
+  font-size: 3em;
+  opacity: 0;
+}
+
+.left-work img{
+  width: 50vw;
+  height: 50vh;
+}
+
+.left-work,.right-work{
+  width: 50vw;
+  height: 50vh;
+}
+
+.right-work{
+  margin-top: 10vh;
+}
+
+.ligne{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:6em;
+}
+
+#travaux h1{
+  text-align: center;
+  background-color: #333333;
+  background-size: 25%;
+}
+
+#travaux div h1{
+  padding: 1 1em;
+  font-size: 2em;
+}
+
+#travaux div p{
+  font-size: 1em;
+  padding: 0.5em 1em;
+}
+
+}
+
+@media screen and (max-width:800px){
+  p {
+    font-size: 15px;
+    padding: 0em 3em 1em;
+  }
+  
+  /*Menu nav*/
+  
+  
+  /*Home*/
+  #presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #presentation p{
+   font-size:20px;
+  }
+  
+  #presentation h1{
+    font-size: 2.5em;
+   padding: 0em 1em;
+  }
+  
+  
+  /*Page à propos et compétences*/
+  
+  .infos h1{
+    font-size: 2em;
+  }
+
+  .infos p{
+    text-align: center;
+  }
+  
+  .icons h3{
+    padding: 0em 1em;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: "Couture", sans-serif;
+    text-shadow: 5px 5px 10px black;
+  }
+  
+  .icons img{
+    padding: 1em 1em;
+    color: #fff;
+    width:40px;
+    height:40px;
+  }
+  
+  #cv{
+    font-size: 1.5em;
+    padding: 1.5em;
+  }
+  
+    /* Travaux */
+  
+  #travaux{
+    margin-top: 10vh;
+    z-index: 1500;
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+  }
+  
+  h5{
+    color: #fff;
+    font-size: 2em;
+    opacity: 0;
+  }
+  
+  .left-work img{
+    width: 60vw;
+    height: 50vh;
+  }
+  
+  .left-work,.right-work{
+    width: 60vw;
+    height: 50vh;
+  }
+  
+  .right-work{
+    margin-top: 10vh;
+  }
+  
+  .ligne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:6em;
+  }
+  
+  #travaux h1{
+    text-align: center;
+    background-color: #333333;
+    background-size: 25%;
+  }
+  
+  #travaux div h1{
+    padding: 1 1em;
+    font-size: 2em;
+  }
+  
+  #travaux div p{
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+
+  .contact img{
+    height: 7vh;
+  }
+
+   /* Pages de projets */
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header{
+  width: 100vw;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+#titre h1{
+  text-align: center;
+}
+
+#resume{
+  background-color: #333333;
+  margin-top: 10vh;
+  width: 90vw;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+  border: solid white 3px;
+}
+
+#resume p{
+  font-size: 20px;
+}
+
+#partie1{
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#partie1 img{
+  width: 90vw;
+}
+
+#partie2 img{
+  width: 90vw;
+}
+
+#color{
+  width: 90vw;
+  margin-top: 10vh;
+}
+
+#color p{
+  font-size: 20px;
+  text-align: center;
+}
+
+#partie2{
+  width: 80vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+}
+
+@media screen and (max-width:500px){
+  p {
+    font-size: 15px;
+    padding: 0em 3em 1em;
+  }
+  
+  /*Menu nav*/
+  
+  
+  /*Home*/
+
+
+  #presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25vh;
+    width: 60vw;
+    height:50vh;
+    background-color: #333333;  
+    z-index: 2000;
+    box-shadow: 20px 20px 10px 1px rgba(0, 0, 0, 0.5);
+    border: solid white 3px;
+  }
+  
+  #presentation p{
+   font-size:18px;
+   text-align: center;
+  }
+  
+  #presentation h1{
+    font-size: 2.5em;
+   padding: 0em 1em;
+  }
+  
+  
+  /*Page à propos et compétences*/
+  
+  .infos{
+    margin-top: 30vh;
+    width:100%;
+    height: 220vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-container,.right-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .infos h1{
+    font-size: 2.5em;
+  }
+  
+  .icons{
+    padding: 2em;
+  }
+
+  .icons h3{
+    padding: 0em 0em;
+    font-size: 1.5em;
+  }
+  
+  .icons img{
+    padding: 1em 1em;
+    width:40px;
+    height:40px;
+  }
+  
+  #cv{
+    font-size: 1.5em;
+    padding: 1.5em;
+  }
+  
+    /* Travaux */
+  
+  #travaux{
+    margin-top: 10vh;
+    z-index: 1500;
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .left-work img{
+    width: 100vw;
+    height: 50vh;
+  }
+  
+  .left-work,.right-work{
+    width: 100vw;
+    height: 50vh;
+  }
+  
+  .right-work{
+    margin-top: 10vh;
+  }
+  
+  .ligne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:6em;
+  }
+  
+  #travaux h1{
+    text-align: center;
+    background-color: #333333;
+    background-size: 25%;
+  }
+  
+  #travaux .ligne div{
+    box-shadow: 0px 20px 10px 1px rgba(0, 0, 0, 0.5);
+    border: solid white 3px;
+  }
+
+  #travaux div h1{
+    padding: 1 1em;
+    font-size: 2em;
+  }
+  
+  #travaux div p{
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+
+  .contact img{
+    height: 7vh;
+  }
+}

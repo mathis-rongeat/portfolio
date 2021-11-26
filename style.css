@@ -199,6 +199,10 @@ align-items:center;
   background-color:#333333 ;
 }
 
+b{
+  color: #03A9F4;
+}
+
 .left-container,.right-container{
   width: 50%;
   height: 100vh;
